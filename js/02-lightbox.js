@@ -20,4 +20,4 @@ const lightbox = new SimpleLightbox(".gallery a", {
     captionPosition: "bottom",
 });
 
-console.log(galleryItems)
+console.log(galleryItems);
