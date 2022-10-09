@@ -2,11 +2,9 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 const gallery = document.querySelector("div.gallery");
-const instance = basicLightbox.create(`
-  <img src="" />
-`);
+const instance = basicLightbox.create(`<img src="" />`);
 
-const newImages = galleryItems
+const newGallery = galleryItems
     .map(
         (image) =>
             `<div class="gallery__item">
@@ -18,11 +16,10 @@ const newImages = galleryItems
       alt="${image.description}"
     />
   </a>
-</div>`
-    )
+</div>`)
     .join("");
 
-gallery.insertAdjacentHTML("beforeend", newImages);
+gallery.insertAdjacentHTML("beforeend", newGallery);
 
 gallery.addEventListener("click", onOpenModal);
 
@@ -40,7 +37,7 @@ function onOpenModal(event) {
 
 function onEscapeClick(event) {
     if (event.key === "Escape") {
-        console.log("Close modal");
+        console.log("Close modalwindow");
         instance.close();
         window.removeEventListener("keydown", onEscapeClick);
         return;
